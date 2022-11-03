@@ -1,0 +1,27 @@
+.header {
+  height: 80px;
+  background-color: #1c2b35;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 140px;
+}
+
+.nav-link a {
+  font-size: 17px;
+  color: #fff;
+  text-decoration: none;
+  /* margin: 20px; */
+  margin-left: 36px;
+}
+
+.nav-link a:hover {
+  color: #00bfff;
+}
+
+.btn-logout {
+  margin-left: 10px;
+  border: 1px solid tomato;
+  padding: 10px;
+  border-radius: 25px;
+}
