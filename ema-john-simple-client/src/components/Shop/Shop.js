@@ -10,7 +10,7 @@ import "./Shop.css";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Shop = () => {
-  const products = useLoaderData();
+  const { products, count } = useLoaderData();
   const [cart, setCart] = useState([]);
 
   const clearCart = () => {
