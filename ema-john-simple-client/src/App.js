@@ -20,7 +20,7 @@ const App = () => {
       children: [
         {
           path: "/",
-          loader: () => fetch("http://localhost:5000/products"),
+          // loader: () => fetch("http://localhost:5000/products"),
           element: <Shop />,
         },
         {

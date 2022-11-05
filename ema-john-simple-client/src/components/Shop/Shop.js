@@ -10,13 +10,26 @@ import "./Shop.css";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Shop = () => {
-  const { products, count } = useLoaderData();
-  console.log(count);
+  // const { products, count } = useLoaderData();
+  // console.log(count);
+  const [products, setProducts] = useState([]);
+  const [count, setCount] = useState([]);
   const [cart, setCart] = useState([]);
+
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(10);
 
   const pages = Math.ceil(count / size);
+
+  useEffect(() => {
+    const url = `http://localhost:5000/products?page=${page}&size=${size}`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setCount(data.count);
+        setProducts(data.products);
+      });
+  }, [page, size]);
 
   const clearCart = () => {
     setCart([]);
@@ -83,7 +96,7 @@ const Shop = () => {
           <button
             key={number}
             onClick={() => setPage(number)}
-            className={page === number && "selected"}
+            className={page == number && "selected"}
           >
             {number}
           </button>
