@@ -1,9 +1,8 @@
-import React from "react";
 import { getStoredCart } from "../utilities/fakedb";
 
 const productsAndCartLoader = async () => {
   // get products data
-  const productsData = await fetch("products.json");
+  const productsData = await fetch("http://localhost:5000/products");
   const products = await productsData.json();
 
   // get cart
@@ -11,7 +10,7 @@ const productsAndCartLoader = async () => {
   const initialCart = [];
 
   for (const id in savedCart) {
-    const addedProduct = products.find((product) => product.id === id);
+    const addedProduct = products.find((product) => product._id === id);
     // console.log(id, addedProduct);
     if (addedProduct) {
       const quantity = savedCart[id];

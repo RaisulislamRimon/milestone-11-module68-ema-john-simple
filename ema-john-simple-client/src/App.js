@@ -46,6 +46,7 @@ const App = () => {
         {
           path: "/orders",
           // loader: () => fetch("products.json"),
+          // loader: () => fetch("http://localhost:5000/products"),
           loader: productsAndCartLoader,
           element: <Orders />,
         },
