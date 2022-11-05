@@ -98,7 +98,7 @@ const Shop = () => {
             onClick={() => setPage(number)}
             className={page === number ? "selected" : ""}
           >
-            {number}
+            {number + 1}
           </button>
         ))}
         <select onChange={(e) => setSize(e.target.value)} name="" id="">
